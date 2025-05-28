@@ -28,4 +28,17 @@ public class Estudiante {
         notas[posicion] = valor;
     }
 
+    
+    public double calcularPromedio() {
+        double suma = 0;
+        for (int i = 0; i < 5; i++) {
+            suma += notas[i];
+        }
+        return suma / 5;
+    }
+
+    public boolean aprobado() {
+        return calcularPromedio() >= 70;
+    }
+
 }   
