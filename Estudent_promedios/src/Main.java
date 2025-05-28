@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         Estudiante estudiante1 = new Estudiante();
@@ -19,7 +19,7 @@ public class Main {
             System.out.print("Nota " + (i + 1) + ": ");
             estudiante1.setNota(i, scanner.nextDouble());
         }
-        scanner.nextLine();
+        scanner.nextLine(); 
 
         System.out.println("=== Estudiante 2 ===");
         System.out.print("Nombre: ");
@@ -63,6 +63,23 @@ public class Main {
             System.out.print("Nota " + (i + 1) + ": ");
             estudiante5.setNota(i, scanner.nextDouble());
         }
-        scanner.nextLine();
+        scanner.nextLine(); 
+
+        System.out.println("\n=== RESULTADOS ===");
+        mostrarInfo(estudiante1);
+        mostrarInfo(estudiante2);
+        mostrarInfo(estudiante3);
+        mostrarInfo(estudiante4);
+        mostrarInfo(estudiante5);
+
+        scanner.close();
+    }
+
+    public static void mostrarInfo(Estudiante e) {
+        System.out.println("Nombre: " + e.getNombre());
+        System.out.println("Matrícula: " + e.getMatricula());
+        System.out.printf("Promedio: %.2f%n", e.calcularPromedio());
+        System.out.println("Aprobado: " + (e.aprobado() ? "Sí" : "No"));
+        System.out.println("--------------------------");
     }
 }
